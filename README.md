@@ -1,4 +1,5 @@
-# Scaffold-Eth 2
+# Decentralized-substack
+## Hello world!
 
 ⚠️ This project is currently under active development. Things might break. Feel free to check the open issues & create new ones.
 
