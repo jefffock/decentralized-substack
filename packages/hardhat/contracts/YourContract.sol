@@ -90,7 +90,7 @@ contract YourContract {
      * Function that allows the owner to withdraw all the Ether in the contract
      * The function can only be called by the owner of the contract as defined by the isOwner modifier
      */
-    function checkSubscriber(address _userAddress) public returns (bool){
+    function checkSubscriber(address _userAddress) view public returns (bool){
         if(subscriberMap[_userAddress] < block.timestamp) {
             return false;
         }
