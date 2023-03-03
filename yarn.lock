@@ -2172,7 +2172,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@heroicons/react@npm:^2.0.11, @heroicons/react@npm:^2.0.16":
+"@heroicons/react@npm:^2.0.11":
   version: 2.0.16
   resolution: "@heroicons/react@npm:2.0.16"
   peerDependencies:
@@ -3284,6 +3284,7 @@ __metadata:
   dependencies:
     "@ethersproject/networks": ^5.7.1
     "@ethersproject/web": ^5.7.1
+    "@headlessui/react": ^1.7.13
     "@heroicons/react": ^2.0.11
     "@rainbow-me/rainbowkit": ^0.11.0
     "@types/node": ^17.0.35
@@ -15456,8 +15457,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "se-2@workspace:."
   dependencies:
-    "@headlessui/react": ^1.7.13
-    "@heroicons/react": ^2.0.16
     husky: ^8.0.1
     lint-staged: ^13.0.3
   languageName: unknown

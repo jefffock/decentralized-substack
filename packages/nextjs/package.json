@@ -16,6 +16,7 @@
   "dependencies": {
     "@ethersproject/networks": "^5.7.1",
     "@ethersproject/web": "^5.7.1",
+    "@headlessui/react": "^1.7.13",
     "@heroicons/react": "^2.0.11",
     "@rainbow-me/rainbowkit": "^0.11.0",
     "@uniswap/sdk": "^3.0.3",
