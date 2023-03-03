@@ -6,60 +6,59 @@ import "hardhat/console.sol";
 // Use openzeppelin to inherit battle-tested implementations (ERC20, ERC721, etc)
 // import "@openzeppelin/contracts/access/Ownable.sol";
 
-/**
- * A smart contract that allows changing a state variable of the contract and tracking the changes
- * It also allows the owner to withdraw the Ether in the contract
- * @author BuidlGuidl
- */
 contract YourContract {
 
     // State Variables
-    address public immutable owner;
-    string public greeting = "Building Unstoppable Apps!!!";
-    bool public premium = false;
-    uint256 public totalCounter = 0;
-    mapping(address => uint) public userGreetingCounter;
+    address public authorAddress;
+    string public authorName;
+    string public publicationName;
+    uint256 private subscriptionPrice = 0;
+    mapping(address => uint) private subscriberMap;
+    string[] public posts;
 
     // Events: a way to emit log statements from smart contract that can be listened to by external parties
-    event GreetingChange(address greetingSetter, string newGreeting, bool premium, uint256 value);
+    event newPost(string postAddress);
+    event newExtendSubscriptionEvent(address subscriber, uint256 extensionLength);
 
     // Constructor: Called once on contract deployment
     // Check packages/hardhat/deploy/00_deploy_your_contract.ts
-    constructor(address _owner) {
-        owner = _owner;
+    constructor(address _owner, string memory _authorName, string memory _publicationName, uint256 _subscriptionPrice) {
+        authorAddress = _owner;
+        authorName = _authorName;
+        subscriptionPrice = _subscriptionPrice;
+        publicationName = _publicationName;
     }
 
     // Modifier: used to define a set of rules that must be met before or after a function is executed
     // Check the withdraw() function
     modifier isOwner() {
         // msg.sender: predefined variable that represents address of the account that called the current function
-        require(msg.sender == owner, "Not the Owner");
+        require(msg.sender == authorAddress, "Not the Owner");
         _;
     }
 
     /**
-     * Function that allows anyone to change the state variable "greeting" of the contract and increase the counters
+     * Function that allows anyone to Extend the subscription for the particular author
      *
-     * @param _newGreeting (string memory) - new greeting to save on the contract
      */
-    function setGreeting(string memory _newGreeting) public payable {
+    function extendSubscription() public payable returns (uint256){
         // Print data to the hardhat chain console. Remove when deploying to a live network.
-        console.log("Setting new greeting '%s' from %s",  _newGreeting, msg.sender);
-
-        // Change state variables
-        greeting = _newGreeting;
-        totalCounter += 1;
-        userGreetingCounter[msg.sender] += 1;
-
-        // msg.value: built-in global variable that represents the amount of ether sent with the transaction
-        if (msg.value > 0) {
-            premium = true;
+        console.log("Getting new subscriber - ", msg.sender);
+        uint256 subscriptionIncreaseLength = 0;
+        if(subscriptionPrice > 0) {
+            subscriptionIncreaseLength = (msg.value/subscriptionPrice)*86400*30;
         } else {
-            premium = false;
+            subscriptionIncreaseLength = 90*86400*30;
         }
 
+        if (subscriberMap[msg.sender] < block.timestamp ) {
+            subscriberMap[msg.sender] = block.timestamp + subscriptionIncreaseLength;
+        } else {
+            subscriberMap[msg.sender] = subscriberMap[msg.sender] + subscriptionIncreaseLength;
+        }
         // emit: keyword used to trigger an event
-        emit GreetingChange(msg.sender, _newGreeting, msg.value > 0, 0);
+        emit newExtendSubscriptionEvent(msg.sender, subscriptionIncreaseLength);
+        return subscriberMap[msg.sender];
     }
 
     /**
@@ -67,8 +66,35 @@ contract YourContract {
      * The function can only be called by the owner of the contract as defined by the isOwner modifier
      */
     function withdraw() isOwner public {
-        (bool success,) = owner.call{value: address(this).balance}("");
+        (bool success,) = authorAddress.call{value: address(this).balance}("");
         require(success, "Failed to send Ether");
+    }
+
+    /**
+     * Function that allows the owner to withdraw all the Ether in the contract
+     * The function can only be called by the owner of the contract as defined by the isOwner modifier
+     */
+    function publishPost(string memory postAddress) isOwner public {
+        posts.push(postAddress);
+    }
+
+    /**
+     * Function that allows the owner to change monthly price
+     * The function can only be called by the owner of the contract as defined by the isOwner modifier
+     */
+    function changePrice(uint256 _newPrice) isOwner public {
+        subscriptionPrice = _newPrice;
+    }
+
+    /**
+     * Function that allows the owner to withdraw all the Ether in the contract
+     * The function can only be called by the owner of the contract as defined by the isOwner modifier
+     */
+    function checkSubscriber(address _userAddress) public returns (bool){
+        if(subscriberMap[_userAddress] < block.timestamp) {
+            return false;
+        }
+        return true;
     }
 
     /**
