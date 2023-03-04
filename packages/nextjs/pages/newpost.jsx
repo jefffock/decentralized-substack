@@ -1,4 +1,5 @@
 import NavBar from "../components/NavBar";
+import { useForm } from "react-hook-form";
 
 const people = [
   {
@@ -15,8 +16,18 @@ const activityItems = [
 
 
 const NewPost = () => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = data => console.log(data);
+
   return (
     <>
+<<<<<<< HEAD
     <NavBar />
     <div>New Post</div>
     <div>
@@ -39,6 +50,50 @@ const NewPost = () => {
         ))}
       </ul>
     </div>
+=======
+      <NavBar activePage={"newpost"}/>
+      {/* "handleSubmit" will validate your inputs before invoking "onSubmit" */}
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="mx-auto px-2 max-w-lg">
+          <p className="text-2xl text-center">New Post</p>
+          {/* post title */}
+          <label htmlFor="title" className="block text-sm font-medium leading-6 text-gray-900 pt-4">
+            Title
+          </label>
+          <div className="mt-2 pb-8">
+            <input
+              name="title"
+              id="title"
+              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              placeholder=""
+              {...register("title", { required: true })}
+            />
+          </div>
+          {errors.title && <span className="block">This field is required</span>}
+          {/* post text */}
+          <label htmlFor="text" className="block text-sm font-medium leading-6 text-gray-900">
+            Body
+          </label>
+          <div className="mt-2 pb-8">
+            <textarea
+              name="text"
+              id="text"
+              rows={6}
+              cols={50}
+              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              placeholder=""
+              {...register("text", { required: true })}
+            />
+          </div>
+          {errors.text && <span className="block">This field is required</span>}
+          <div className="mx-auto w-fit">
+          <button className="btn btn-primary" type="submit">
+            Add this post
+          </button>
+          </div>
+        </div>
+      </form>
+>>>>>>> cd580d9 (New author and new post form skeletons, nav bar shows active page)
     </>
   );
 };
