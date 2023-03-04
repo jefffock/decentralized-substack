@@ -38,7 +38,7 @@ contract YourContract {
     }
 
     /**
-     * Function that allows anyone to Extend the subscription for the particular author
+     * Function that allows anyone to extend the subscription for the particular author
      *
      */
     function extendSubscription() public payable returns (uint256){
@@ -71,7 +71,7 @@ contract YourContract {
     }
 
     /**
-     * Function that allows the owner to withdraw all the Ether in the contract
+     * Function that allows the owner to publish a new post
      * The function can only be called by the owner of the contract as defined by the isOwner modifier
      */
     function publishPost(string memory postAddress) isOwner public {
@@ -87,8 +87,7 @@ contract YourContract {
     }
 
     /**
-     * Function that allows the owner to withdraw all the Ether in the contract
-     * The function can only be called by the owner of the contract as defined by the isOwner modifier
+     * Function that checks if the user has a valid subscription
      */
     function checkSubscriber(address _userAddress) view public returns (bool){
         if(subscriberMap[_userAddress] < block.timestamp) {
