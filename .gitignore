@@ -1,5 +1,6 @@
 node_modules
 env/
+soljson*
 # dependencies, yarn, etc
 # yarn / eslint
 .yarn/*

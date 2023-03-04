@@ -1,10 +1,6 @@
 //SPDX-License-Identifier: MIT
 pragma solidity >=0.8.0 <0.9.0;
 
-// Useful for debugging. Remove when deploying to a live network.
-import "hardhat/console.sol";
-// Use openzeppelin to inherit battle-tested implementations (ERC20, ERC721, etc)
-// import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract YourContract {
 
@@ -38,12 +34,10 @@ contract YourContract {
     }
 
     /**
-     * Function that allows anyone to extend the subscription for the particular author
+     * Function that allows a user to extend their subscription for the particular author
      *
      */
     function extendSubscription() public payable returns (uint256){
-        // Print data to the hardhat chain console. Remove when deploying to a live network.
-        console.log("Getting new subscriber - ", msg.sender);
         uint256 subscriptionIncreaseLength = 0;
         if(subscriptionPrice > 0) {
             subscriptionIncreaseLength = (msg.value/subscriptionPrice)*86400*30;

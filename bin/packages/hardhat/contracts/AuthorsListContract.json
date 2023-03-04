@@ -1,0 +1,331 @@
+{
+    "contractName": "AuthorsListContract",
+    "abi": [
+        {
+            "inputs": [
+                {
+                    "internalType": "string",
+                    "name": "authorName",
+                    "type": "string"
+                },
+                {
+                    "internalType": "address",
+                    "name": "authorContractAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "addAuthor",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "string",
+                    "name": "",
+                    "type": "string"
+                }
+            ],
+            "name": "subscriberMap",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        }
+    ],
+    "metadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"authorName\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"authorContractAddress\",\"type\":\"address\"}],\"name\":\"addAuthor\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"name\":\"subscriberMap\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"addAuthor(string,address)\":{\"notice\":\"Function that adds an author to the list of all authors\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/bhavya/ethdenver_lessons/decentralized-substack/packages/hardhat/contracts/AuthorsContract.sol\":\"AuthorsListContract\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/bhavya/ethdenver_lessons/decentralized-substack/packages/hardhat/contracts/AuthorsContract.sol\":{\"keccak256\":\"0xb529e501449b0def417da0d78ce5b060bc78581a44fa47fb11c4608dc7611c86\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ad4b0ed903cb941d27f06c17b0d4d99651b67c6dbe840ca4e72656f127db77d7\",\"dweb:/ipfs/QmdrnhPCEYBmhzagS8VviE3vhQLowsocZMWyhxZZnEbR8C\"]}},\"version\":1}",
+    "bytecode": "608060405234801561001057600080fd5b50610287806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c8063a125ae931461003b578063b3141b3a14610050575b600080fd5b61004e610049366004610187565b6100a0565b005b61008461005e3660046101e5565b80516020818301810180516000825292820191909301209152546001600160a01b031681565b6040516001600160a01b03909116815260200160405180910390f35b806000836040516100b19190610222565b90815260405190819003602001902080546001600160a01b03929092166001600160a01b03199092169190911790555050565b634e487b7160e01b600052604160045260246000fd5b600082601f83011261010b57600080fd5b813567ffffffffffffffff80821115610126576101266100e4565b604051601f8301601f19908116603f0116810190828211818310171561014e5761014e6100e4565b8160405283815286602085880101111561016757600080fd5b836020870160208301376000602085830101528094505050505092915050565b6000806040838503121561019a57600080fd5b823567ffffffffffffffff8111156101b157600080fd5b6101bd858286016100fa565b92505060208301356001600160a01b03811681146101da57600080fd5b809150509250929050565b6000602082840312156101f757600080fd5b813567ffffffffffffffff81111561020e57600080fd5b61021a848285016100fa565b949350505050565b6000825160005b818110156102435760208186018101518583015201610229565b50600092019182525091905056fea2646970667358221220c21d1e73ffdbed70db067f2f268af6504e3c217915a97476e71c5620a56b84dc64736f6c63430008130033",
+    "deployedBytecode": "608060405234801561001057600080fd5b50600436106100365760003560e01c8063a125ae931461003b578063b3141b3a14610050575b600080fd5b61004e610049366004610187565b6100a0565b005b61008461005e3660046101e5565b80516020818301810180516000825292820191909301209152546001600160a01b031681565b6040516001600160a01b03909116815260200160405180910390f35b806000836040516100b19190610222565b90815260405190819003602001902080546001600160a01b03929092166001600160a01b03199092169190911790555050565b634e487b7160e01b600052604160045260246000fd5b600082601f83011261010b57600080fd5b813567ffffffffffffffff80821115610126576101266100e4565b604051601f8301601f19908116603f0116810190828211818310171561014e5761014e6100e4565b8160405283815286602085880101111561016757600080fd5b836020870160208301376000602085830101528094505050505092915050565b6000806040838503121561019a57600080fd5b823567ffffffffffffffff8111156101b157600080fd5b6101bd858286016100fa565b92505060208301356001600160a01b03811681146101da57600080fd5b809150509250929050565b6000602082840312156101f757600080fd5b813567ffffffffffffffff81111561020e57600080fd5b61021a848285016100fa565b949350505050565b6000825160005b818110156102435760208186018101518583015201610229565b50600092019182525091905056fea2646970667358221220c21d1e73ffdbed70db067f2f268af6504e3c217915a97476e71c5620a56b84dc64736f6c63430008130033",
+    "sourceMap": "64:313:0:-:0;;;;;;;;;;;;;;;;;;;",
+    "deployedSourceMap": "64:313:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;235:140;;;;;;:::i;:::-;;:::i;:::-;;115:47;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;115:47:0;;;;;;-1:-1:-1;;;;;1862:32:1;;;1844:51;;1832:2;1817:18;115:47:0;;;;;;;235:140;351:21;323:13;337:10;323:25;;;;;;:::i;:::-;;;;;;;;;;;;;;:49;;-1:-1:-1;;;;;323:49:0;;;;-1:-1:-1;;;;;;323:49:0;;;;;;;;;-1:-1:-1;;235:140:0:o;14:127:1:-;75:10;70:3;66:20;63:1;56:31;106:4;103:1;96:15;130:4;127:1;120:15;146:719;189:5;242:3;235:4;227:6;223:17;219:27;209:55;;260:1;257;250:12;209:55;296:6;283:20;322:18;359:2;355;352:10;349:36;;;365:18;;:::i;:::-;440:2;434:9;408:2;494:13;;-1:-1:-1;;490:22:1;;;514:2;486:31;482:40;470:53;;;538:18;;;558:22;;;535:46;532:72;;;584:18;;:::i;:::-;624:10;620:2;613:22;659:2;651:6;644:18;705:3;698:4;693:2;685:6;681:15;677:26;674:35;671:55;;;722:1;719;712:12;671:55;786:2;779:4;771:6;767:17;760:4;752:6;748:17;735:54;833:1;826:4;821:2;813:6;809:15;805:26;798:37;853:6;844:15;;;;;;146:719;;;;:::o;870:496::-;948:6;956;1009:2;997:9;988:7;984:23;980:32;977:52;;;1025:1;1022;1015:12;977:52;1065:9;1052:23;1098:18;1090:6;1087:30;1084:50;;;1130:1;1127;1120:12;1084:50;1153;1195:7;1186:6;1175:9;1171:22;1153:50;:::i;:::-;1143:60;-1:-1:-1;;1253:2:1;1238:18;;1225:32;-1:-1:-1;;;;;1286:31:1;;1276:42;;1266:70;;1332:1;1329;1322:12;1266:70;1355:5;1345:15;;;870:496;;;;;:::o;1371:322::-;1440:6;1493:2;1481:9;1472:7;1468:23;1464:32;1461:52;;;1509:1;1506;1499:12;1461:52;1549:9;1536:23;1582:18;1574:6;1571:30;1568:50;;;1614:1;1611;1604:12;1568:50;1637;1679:7;1670:6;1659:9;1655:22;1637:50;:::i;:::-;1627:60;1371:322;-1:-1:-1;;;;1371:322:1:o;1906:414::-;2037:3;2075:6;2069:13;2100:1;2110:129;2124:6;2121:1;2118:13;2110:129;;;2222:4;2206:14;;;2202:25;;2196:32;2183:11;;;2176:53;2139:12;2110:129;;;-1:-1:-1;2294:1:1;2258:16;;2283:13;;;-1:-1:-1;2258:16:1;1906:414;-1:-1:-1;1906:414:1:o",
+    "sourcePath": "/Users/bhavya/ethdenver_lessons/decentralized-substack/packages/hardhat/contracts/AuthorsContract.sol",
+    "compiler": {
+        "name": "solc",
+        "version": "0.8.19+commit.7dd6d404"
+    },
+    "ast": {
+        "absolutePath": "/Users/bhavya/ethdenver_lessons/decentralized-substack/packages/hardhat/contracts/AuthorsContract.sol",
+        "exportedSymbols": {
+            "AuthorsListContract": [
+                21
+            ]
+        },
+        "id": 22,
+        "license": "MIT",
+        "nodeType": "SourceUnit",
+        "nodes": [
+            {
+                "id": 1,
+                "literals": [
+                    "solidity",
+                    ">=",
+                    "0.8",
+                    ".0",
+                    "<",
+                    "0.9",
+                    ".0"
+                ],
+                "nodeType": "PragmaDirective",
+                "src": "31:31:0"
+            },
+            {
+                "abstract": false,
+                "baseContracts": [],
+                "canonicalName": "AuthorsListContract",
+                "contractDependencies": [],
+                "contractKind": "contract",
+                "fullyImplemented": true,
+                "id": 21,
+                "linearizedBaseContracts": [
+                    21
+                ],
+                "name": "AuthorsListContract",
+                "nameLocation": "73:19:0",
+                "nodeType": "ContractDefinition",
+                "nodes": [
+                    {
+                        "constant": false,
+                        "functionSelector": "b3141b3a",
+                        "id": 5,
+                        "mutability": "mutable",
+                        "name": "subscriberMap",
+                        "nameLocation": "149:13:0",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 21,
+                        "src": "115:47:0",
+                        "stateVariable": true,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_address_$",
+                            "typeString": "mapping(string => address)"
+                        },
+                        "typeName": {
+                            "id": 4,
+                            "keyName": "",
+                            "keyNameLocation": "-1:-1:-1",
+                            "keyType": {
+                                "id": 2,
+                                "name": "string",
+                                "nodeType": "ElementaryTypeName",
+                                "src": "123:6:0",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_string_storage_ptr",
+                                    "typeString": "string"
+                                }
+                            },
+                            "nodeType": "Mapping",
+                            "src": "115:26:0",
+                            "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_address_$",
+                                "typeString": "mapping(string => address)"
+                            },
+                            "valueName": "",
+                            "valueNameLocation": "-1:-1:-1",
+                            "valueType": {
+                                "id": 3,
+                                "name": "address",
+                                "nodeType": "ElementaryTypeName",
+                                "src": "133:7:0",
+                                "stateMutability": "nonpayable",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_address",
+                                    "typeString": "address"
+                                }
+                            }
+                        },
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 19,
+                            "nodeType": "Block",
+                            "src": "317:58:0",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "id": 17,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "baseExpression": {
+                                                "id": 13,
+                                                "name": "subscriberMap",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 5,
+                                                "src": "323:13:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_address_$",
+                                                    "typeString": "mapping(string memory => address)"
+                                                }
+                                            },
+                                            "id": 15,
+                                            "indexExpression": {
+                                                "id": 14,
+                                                "name": "authorName",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 8,
+                                                "src": "337:10:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_string_memory_ptr",
+                                                    "typeString": "string memory"
+                                                }
+                                            },
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": true,
+                                            "nodeType": "IndexAccess",
+                                            "src": "323:25:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_address",
+                                                "typeString": "address"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
+                                            "id": 16,
+                                            "name": "authorContractAddress",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 10,
+                                            "src": "351:21:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_address",
+                                                "typeString": "address"
+                                            }
+                                        },
+                                        "src": "323:49:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_address",
+                                            "typeString": "address"
+                                        }
+                                    },
+                                    "id": 18,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "323:49:0"
+                                }
+                            ]
+                        },
+                        "documentation": {
+                            "id": 6,
+                            "nodeType": "StructuredDocumentation",
+                            "src": "165:69:0",
+                            "text": " Function that adds an author to the list of all authors"
+                        },
+                        "functionSelector": "a125ae93",
+                        "id": 20,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "addAuthor",
+                        "nameLocation": "244:9:0",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 11,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 8,
+                                    "mutability": "mutable",
+                                    "name": "authorName",
+                                    "nameLocation": "268:10:0",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 20,
+                                    "src": "254:24:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "memory",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_string_memory_ptr",
+                                        "typeString": "string"
+                                    },
+                                    "typeName": {
+                                        "id": 7,
+                                        "name": "string",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "254:6:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_string_storage_ptr",
+                                            "typeString": "string"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                },
+                                {
+                                    "constant": false,
+                                    "id": 10,
+                                    "mutability": "mutable",
+                                    "name": "authorContractAddress",
+                                    "nameLocation": "288:21:0",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 20,
+                                    "src": "280:29:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_address",
+                                        "typeString": "address"
+                                    },
+                                    "typeName": {
+                                        "id": 9,
+                                        "name": "address",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "280:7:0",
+                                        "stateMutability": "nonpayable",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_address",
+                                            "typeString": "address"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "253:57:0"
+                        },
+                        "returnParameters": {
+                            "id": 12,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "317:0:0"
+                        },
+                        "scope": 21,
+                        "src": "235:140:0",
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "public"
+                    }
+                ],
+                "scope": 22,
+                "src": "64:313:0",
+                "usedErrors": []
+            }
+        ],
+        "src": "31:346:0"
+    },
+    "functionHashes": {
+        "addAuthor(string,address)": "a125ae93",
+        "subscriberMap(string)": "b3141b3a"
+    },
+    "gasEstimates": {
+        "creation": {
+            "codeDepositCost": "129400",
+            "executionCost": "177",
+            "totalCost": "129577"
+        },
+        "external": {
+            "addAuthor(string,address)": "infinite",
+            "subscriberMap(string)": "infinite"
+        }
+    }
+}
