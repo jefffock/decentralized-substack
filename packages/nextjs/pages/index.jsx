@@ -11,7 +11,7 @@ const Home = () => {
         <title>Decentralized Substack</title>
         <meta name="description" content="Decentralized substack" />
       </Head>
-      <NavBar />
+      <NavBar activePage={'home'}/>
       <p>Home</p>
     </>
   );
