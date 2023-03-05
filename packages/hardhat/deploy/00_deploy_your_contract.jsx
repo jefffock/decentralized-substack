@@ -22,7 +22,9 @@ async function deployYourContract(authorAddress, authorName, subscriptionPrice, 
   console.log("subscriptionPrice", subscriptionPrice);
   console.log("publicationName", publicationName);
   console.log("compilerOutput", compilerOutput);
-
+  // const decimals = 18;
+  // const input = subscriptionPrice;
+  // const amount = BigNumber.from(input).mul(BigNumber.from(10).pow(decimals));
   // authorName: string, subscriptionPrice: number, publicationName: string,
   /*
     On localhost, the deployer account is the one that comes with Hardhat, which is already funded.
@@ -52,7 +54,7 @@ async function deployYourContract(authorAddress, authorName, subscriptionPrice, 
 
   console.log('authorAddress', authorAddress)
 
-  const contract = await factory.deploy(
+  const deployedContract = await factory.deploy(
     authorAddress,
     authorName,
     publicationName,
@@ -62,8 +64,10 @@ async function deployYourContract(authorAddress, authorName, subscriptionPrice, 
     // // automatically mining the contract deployment transaction. There is no effect on live networks.
     // autoMine: true,
   );
+  await deployedContract.deployed()
   console.log('deployed contract')
-  await contract.deployTransaction.wait()
+  // await contract.deployTransaction.wait()
+  console.log('contract', deployedContract)
   // console.log('contract.address', contract.address)
   // console.log('contract.deployTransaction', contract.deployTransaction)
 
