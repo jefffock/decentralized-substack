@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useContractWrite, usePrepareContractWrite } from "wagmi";
 import deployYourContract from "../../hardhat/deploy/00_deploy_your_contract";
 import { useAccount } from 'wagmi'
+import { ethers } from "ethers";
 
 const AuthorSignup = () => {
   const {
@@ -24,7 +25,7 @@ const AuthorSignup = () => {
 
   async function onSubmit(data) {
     console.log("data in author signup", data);
-    await deployYourContract(data.name, Number(data.price), data.publicationName)
+    await deployYourContract(address, data.name, Number(data.price), data.publicationName)
     const deployer = address
     const authorsContract = await ethers.getContract("YourContract", deployer);
     console.log('authorsContract', authorsContract)
